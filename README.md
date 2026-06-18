@@ -14,8 +14,6 @@ The objective of this project was to allow a private Amazon EC2 instance to uplo
 - Secure access using IAM Roles
 - Traffic remains within the AWS network
 
----
-
 ## Solution Overview
 
 This project demonstrates how to provide secure and private connectivity between Amazon EC2 and Amazon S3 using an S3 Gateway VPC Endpoint.
@@ -31,8 +29,6 @@ The infrastructure was provisioned using Terraform and consists of:
 - Amazon S3 Bucket
 
 The EC2 instance uses an IAM Role for authentication and uploads files directly to Amazon S3 through the Gateway VPC Endpoint without traversing the public internet.
-
----
 
 ## Architecture Diagram
 
@@ -59,8 +55,6 @@ The EC2 instance uses an IAM Role for authentication and uploads files directly 
 5. The EC2 instance uploads a file to Amazon S3.
 6. Traffic remains on the AWS private network.
 
----
-
 ## Infrastructure Deployment
 
 Terraform was used to provision all infrastructure resources.
@@ -69,8 +63,6 @@ Terraform was used to provision all infrastructure resources.
 
 ![Terraform Outputs](./images/terraform-outputs.png)
 
----
-
 ## VPC Endpoint Configuration
 
 The S3 Gateway VPC Endpoint was associated with the private route table to provide secure access to Amazon S3.
@@ -78,8 +70,6 @@ The S3 Gateway VPC Endpoint was associated with the private route table to provi
 ### VPC Endpoint Details
 
 ![VPC Endpoint](./images/vpc-endpoint-details.png)
-
----
 
 ## EC2 Instance Configuration
 
@@ -90,8 +80,6 @@ An IAM Role was attached using an Instance Profile to provide secure access to A
 ### Private EC2 Instance
 
 ![Private EC2 Instance](./images/private-ec2-instance.png)
-
----
 
 ## Validation
 
@@ -121,8 +109,6 @@ aws s3 cp test.txt s3://afua-vpc-project-bucket/
 - No NAT Gateway required
 - No internet connectivity required
 
----
-
 ## Business Benefits
 
 ### Enhanced Security
@@ -147,8 +133,6 @@ Supports workloads involving:
 
 Multiple private workloads can securely access Amazon S3 through the same Gateway VPC Endpoint.
 
----
-
 ## Terraform Features
 
 - Infrastructure as Code (IaC)
@@ -157,8 +141,6 @@ Multiple private workloads can securely access Amazon S3 through the same Gatewa
 - IAM least-privilege access model
 - Automated validation using User Data
 - Resource tagging using environment variables
-
----
 
 ## Key Learning Outcomes
 
@@ -171,8 +153,6 @@ Through this project I learned how to:
 - Apply Infrastructure as Code using Terraform
 - Reduce costs by eliminating NAT Gateway dependencies
 - Validate secure connectivity between private workloads and Amazon S3
-
----
 
 ## Author
 
